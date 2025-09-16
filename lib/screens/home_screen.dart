@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:perpelxity_clone/services/chat_web_service.dart';
 import 'package:perpelxity_clone/widgets/search_section.dart';
 import 'package:perpelxity_clone/widgets/side_nav_bar.dart';
 
-import '../widgets/search_section.dart';
+class HomeScreen extends StatefulWidget {
+  const  HomeScreen({super.key});
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    ChatWebService().connect();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +39,8 @@ class HomeScreen extends StatelessWidget {
                 // footer (vertically layed out)
               ],
             ),
-          )
+          ),
+          
         ],
       ),
     );

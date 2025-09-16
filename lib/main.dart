@@ -17,15 +17,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Day 2 of building a flutter project',
+      title: 'Perplexity Clone',
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.background,
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.submitButton,
         ),
-        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
+        textTheme: GoogleFonts.interTextTheme(
+          ThemeData.dark().textTheme.copyWith(
+                bodyMedium:
+                    const TextStyle(fontSize: 15, color: AppColors.whiteColor),
+              ),
+        ),
       ),
-      home: HomeScreen(),
+      home: const HomeScreen()
     );
   }
 }
